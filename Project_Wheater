@@ -1,0 +1,83 @@
+# Project_Wheater
+
+## 0. 摘要
+通过 SQL 查询并导出给定的数据集，再通过 googel sheet 整理并进行数据可视化。发现有气温记录以来，天津和全球气温的移动平均值逐步上升。预计100年后，天津的移动平均值将再升高 0.9 度。
+
+## 1.背景
+这是我参与的优达学城《数据分析入门》课程项目1的作业。
+
+## 2. 分析过程
+使用 SQL 查询数据表
+
+### step 1: 查询有哪些中国城市
+
+```SELECT *
+FROM city_list
+ORDER BY city
+```
+
+发现数据表中没有现在所在的城市，北京。
+
+### step 2: 查找离自己最近的是 Tianjin
+
+
+```SELECT *
+FROM city_list
+WHERE country = 'China'
+ORDER BY city
+```
+
+### step 3: 查询 Tianjin 的气温数据
+
+
+```SELECT year, avg_temp
+FROM city_data
+Where city = 'Tianjin'
+```
+
+### step 4: 查询全球数据
+
+
+```SELECT *
+FROM global_data
+```
+
+### step 5: 计算 moving average
+利用 google sheet 整合并计算数据。
+
+选择每10年计算一次 moing average，同时，为了方便直观地比较，我将全球和天津的数据整合至一张工作表。通过 google sheet 的探索功能，获得以下图标。
+
+1. 全球与天津气温的移动平均值曲线
+![Graph-1](https://i.loli.net/2018/12/12/5c10b4435592e.jpg)
+
+2. 自1820年以来，天津与全球平均温差的移动平均值曲线
+![Graph-2](https://i.loli.net/2018/12/12/5c10b4445ef21.jpg)
+
+[原始数据表](https://docs.google.com/spreadsheets/d/1fwE7BsF15MB41WWdplyhbU-0lrbpG9aGaIjAmMLBbpk/edit?usp=sharing)
+
+
+### 3. 结论
+1. 几百年来，全球气温的整体趋势是怎样的？
+从 Graph-1 来看，全球年平均气温在 1780 年前后达到过一个高点 9.43，随后回落，然后逐年缓慢上升。
+
+2. 我选择的城市平均气温跟全球相比，是要更热还是更冷？
+从 Graph-1 来看，天津平均气温要高于全球平均水平。
+
+3. 我选择的城市与全球平均气温变化趋势是否一致？
+一致。
+从1820年，天津有数据记录以来，平均气温与全球一致，呈上升趋势
+
+4. 我选择的城市与全球平均水平相比，温差趋势是否有变化？
+从 Graph-2 来看，自天津有气温数据记录开始，比全球气温高2~5度之间，温差趋势一直保持稳定。
+
+5. 能否对100年后的全球和天津温度进行预测？
+按照过去数百年的趋势，“year”每增加 100，“Tianjin_mov_avg”会增加约 0.872。因此，100年后，天津的十年平均温度将升高接近一度。
+
+### 4. 讨论
+这一周的作业还算比较简单，耗时刚好是预定的1.5h。
+
+### 5. 参考文献
+null
+
+### ChangeLog
+2018/12/12 V1.0 耗时 1.5h
