@@ -11,7 +11,8 @@
 
 ### step 1: 查询有哪些中国城市
 
-```SELECT *
+```sql
+SELECT *
 FROM city_list
 ORDER BY city
 ```
@@ -21,7 +22,8 @@ ORDER BY city
 ### step 2: 查找离自己最近的是 Tianjin
 
 
-```SELECT *
+```sql
+SELECT *
 FROM city_list
 WHERE country = 'China'
 ORDER BY city
@@ -30,7 +32,8 @@ ORDER BY city
 ### step 3: 查询 Tianjin 的气温数据
 
 
-```SELECT year, avg_temp
+```sql
+SELECT year, avg_temp
 FROM city_data
 Where city = 'Tianjin'
 ```
@@ -38,7 +41,8 @@ Where city = 'Tianjin'
 ### step 4: 查询全球数据
 
 
-```SELECT *
+```sql
+SELECT *
 FROM global_data
 ```
 
@@ -47,11 +51,15 @@ FROM global_data
 
 选择每10年计算一次 moing average，同时，为了方便直观地比较，我将全球和天津的数据整合至一张工作表。通过 google sheet 的探索功能，获得以下图标。
 
-1. 全球与天津气温的移动平均值曲线
-![Graph-1](https://i.loli.net/2018/12/12/5c10b4435592e.jpg)
+**1. 全球与天津气温的移动平均值曲线**
+![全球与天津气温趋势](全球与天津气温趋势.pnghtt://
+pgp6ieyi0.bkt.clouddn.com/
+pgp6ieyi0.bkt.clouddn.com)
 
 2. 自1820年以来，天津与全球平均温差的移动平均值曲线
-![Graph-2](https://i.loli.net/2018/12/12/5c10b4445ef21.jpg)
+![天津与全球气温温差变化趋势](天津与全球气温温差变化趋势.pnghtt://
+pgp6ieyi0.bkt.clouddn.com/
+pgp6ieyi0.bkt.clouddn.com)
 
 [原始数据表](https://docs.google.com/spreadsheets/d/1fwE7BsF15MB41WWdplyhbU-0lrbpG9aGaIjAmMLBbpk/edit?usp=sharing)
 
