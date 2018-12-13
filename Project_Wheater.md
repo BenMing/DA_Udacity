@@ -14,7 +14,7 @@
 ```sql
 SELECT *
 FROM city_list
-ORDER BY city
+ORDER BY city；
 ```
 
 发现数据表中没有现在所在的城市，北京。
@@ -26,7 +26,7 @@ ORDER BY city
 SELECT *
 FROM city_list
 WHERE country = 'China'
-ORDER BY city
+ORDER BY city；
 ```
 
 ### step 3: 查询 Tianjin 的气温数据
@@ -35,7 +35,7 @@ ORDER BY city
 ```sql
 SELECT year, avg_temp
 FROM city_data
-Where city = 'Tianjin'
+Where city = 'Tianjin'；
 ```
 
 ### step 4: 查询全球数据
@@ -43,7 +43,7 @@ Where city = 'Tianjin'
 
 ```sql
 SELECT *
-FROM global_data
+FROM global_data；
 ```
 
 ### step 5: 计算 moving average
@@ -81,10 +81,25 @@ FROM global_data
 按照过去数百年的趋势，“year”每增加 100，“Tianjin_mov_avg”会增加约 0.872。因此，100年后，天津的十年平均温度将升高接近一度。
 
 ### 4. 讨论
+V1.0
 这一周的作业还算比较简单，耗时刚好是预定的1.5h。
+
+V1.1
+自查发现代码结束时没有` ; `，尽管不影响 sql 运行，但为了保持良好的代码格式，以后要记得加上，可以对照已经整理好的规范清单自查。
+
+根据审阅者意见：
+
+1. 掌握了一个 markdown 语法知识，即代码块的三个反引号后面，需要是编程语言的名称。
+![](https://i.loli.net/2018/12/13/5c11c2a05fdd7.png)
+
+2. 未来还可以在以下方面进行探索：
+    - 图表中还可以观察一些局部的特殊波动现象；
+    - 对比另外一个感兴趣的城市，看看城市之间的横向对比；
+    - 探索全球气温和城市气温原始数据的相关性，计算线性回归，看看能不能通过全球气温来预测城市气温；
 
 ### 5. 参考文献
 null
 
 ### ChangeLog
 2018/12/12 V1.0 耗时 1.5h
+2018/12/12 V1.1 耗时 0.5h
